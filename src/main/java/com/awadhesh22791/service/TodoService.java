@@ -7,8 +7,16 @@ import reactor.core.publisher.Mono;
 
 public interface TodoService {
 
-	Flux<Todo> getAll(String todo);
+	public Flux<Todo> findAll(String todo);
 
-	Mono<Todo> create(Todo todo);
+	public Mono<Todo> create(Todo todo);
+
+	public Mono<Todo> findById(String id);
+
+	public Mono<Todo> toggleStatus(String id);
+
+	public Mono<Todo> update(Todo todo);
+
+	public Mono<Boolean> delete(String id);
 
 }
